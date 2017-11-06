@@ -15,7 +15,7 @@
 
 \begin{document}
 
-\title{All Optical AND Gate Using Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers}
+\title{All-optical AND gate with photonic crystal quantum-dot semiconductor optical amplifiers}
 
 \name{Takuma Matsumoto, Gou Hosoya, and Hiroyuki Yashima}
 %%% The order of name is first name and family name. 
@@ -64,9 +64,10 @@ E-mail:  4416630@ed.tus.ac.jp
 
 \section*{Abstract}
 
-All-optical logic gates(AOLGs) operating under ultrafast bit rates is essential for all optical communication network. AOLGs are composed of all-optical devices which can operate as well as transistor. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consuming are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at a 160Gb/s. Moreover, to show the effectiveness of proposed gate, we compare the proposed gate with conventional gate in terms of volume reduction, energy consuming and performance.
+All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under ultrafast bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consuming are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at a 160Gb/s. Moreover, in order to show the effectiveness of proposed gate, we compare the proposed gate with conventional one in terms of volume reduction, energy consumption and performance.
 
 \section{Introduction}
+% TODO::ANDÉQÅ[ÉgÇÃóòì_Çê‡ñæ
 The demand of telecommunications is grown with the spread of mobile phone users. To cope with the demand, ultrafast light wave communications and networks are essential. In current optical communication network, signal processing technology is used for electrical signal only, and thus, processing electric signal limits the efficiency of current optical communication network{\cite{App}}. So, all optical signal processing  without electrical processing has been developed and the development of all optical devices are required. In recent researches, 
 
 In this paper we propose an all optical error correcting encoder and decoder using horizontal and vertical parity checks. We numerically analyze the encoder and decoder to check input and output waveform of each systems. In addition, we show the performance and efficiency of the proposed code.
@@ -76,7 +77,7 @@ In this paper we propose an all optical error correcting encoder and decoder usi
 
 
 \subsection{All Optical AND Gate}
-Fig.{\ref{figure:xor_gate}} shows the configuration of all optical XOR gate using quantum dot semiconductor optical amplifier(QD-SOA){\cite{Omar}}--{\cite{Ultrafast}}. Two QD-SOA devices and 3dB couplers compose all optical XOR gate. QD-SOA is an optical device used for optical amplifier and modulates phase of output optical signal depending on input optical signal strength.
+Fig.{\ref{figure:xor_gate}} shows the configuration of all optical AND gate using quantum dot semiconductor optical amplifier(QD-SOA){\cite{Omar}}--{\cite{Ultrafast}}. Two QD-SOA devices and 3dB couplers compose all optical XOR gate. QD-SOA is an optical device used for optical amplifier and modulates phase of output optical signal depending on input optical signal strength.
 
 First, the $1 \times 2$ coupler separates clock signal into two waveguides. The clock signal traveling through the upper waveguide and the lower waveguide are fed into the QD-SOA1 and QD-SOA2, respectively. The QD-SOA1 and QD-SOA2 modulate the phase of clock signal by $\phi_{A}$ and $\phi_{B}$ according to input optical signal A and B, respectively. If the phase of the output signal of QD-SOA1 is equal to that of QD-SOA2, the output signals are coupled by the $2 \times 1$ coupler and cancel each other, and thus, the output of the coupler is ``0''. If the phase of the output signal of the QD-SOA1 is different from that of the QD-SOA2 by $\pi$, the output signals are coupled by $2 \times 1$ coupler and the output signal is obtained as ``1''. Thus, table {\ref{table:xor_table}} shows a truth table of all optical XOR gate.
 
@@ -110,38 +111,7 @@ First, the $1 \times 2$ coupler separates clock signal into two waveguides. The 
 
 \newpage
 
-\subsection{All Optical AND Gate}
-Fig.{\ref{figure:and_gate}} shows the configuration of all optical AND gate{\cite{80Gbps}}. Although, the configuration is similar to that of all optical XOR gate, the positions of input signal B and clock signal are replaced. If the input signal B is ``0'', the coupler does not output signal. If the input signal B is ``1'' and input signal A is ``0'', the phase of signal traveling through upper waveguide is different from that of lower waveguide by $\pi$, hence the coupler outputs ``0''. If the input signal A and B are ``1'', the phase of the upper waveguide is different from that of the lower waveguide by $\pi$, hence the coupler outputs ``1''. Thus, table {\ref{table:and_table}} shows a truth table of all optical AND gate.
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=80mm]{QDSOA_Based_AND.eps}
-  \caption{The configuration of QD-SOA based AND gate}
- \label{figure:and_gate}
-\end{center}
-\end{figure}
-
-\renewcommand{\arraystretch}{1.5}
-\begin{table}[htbp]
-\begin{center}
- \small
- \caption{A truth table of all optical AND gate}
- \label{table:and_table}
- \begin{tabular}{c c c}
-  \hline
-  InputA & InputB & Output \\
-  \hline
-  $0$ & $0$ & $0$ \\
-  $0$ & $1$ & $0$ \\
-  $1$ & $0$ & $0$ \\
-  $1$ & $1$ & $1$ \\
-  \hline
-  \end{tabular}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1.0}
-
-\section{All Optical Error Correcting Code Using Horizontal and Vertical Parity Checks}
+\section{All-optical AND gate with photonic crystal quantum-dot semiconductor optical amplifiers}
 \subsection{Horizontal and Vertical Parity Checks}
 Fig.{\ref{figure:checks}} shows the placement of horizontal and vertical parity checks. We use 8-bit-length checks composed of 4-bit-length data and 4-bit-length parity. $x_1,x_2,x_3,x_4$ are referred to as data bit and $x_5,x_6,x_7,x_8$ are referred to as parity bit. Parity bits are calculated as the following equation.
 \begin{eqnarray}
