@@ -67,10 +67,14 @@ E-mail:  4416630@ed.tus.ac.jp
 All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under ultrafast bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consuming are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at a 160Gb/s. Moreover, in order to show the effectiveness of proposed gate, we compare the proposed gate with conventional one in terms of volume reduction, energy consumption and performance.
 
 \section{Introduction}
-% TODO::ANDゲートの利点を説明
+% TODO1::電子デバイスで信号処理が行われてきたことを説明
+% TODO2:今日、全光デバイスが研究されていることを説明(QD-SOA,PC,PC-QDSOA)
+% TODO3::今日の研究で不足している点について説明
+% TODO4::ANDゲートの利点を説明
+% TODO5(一通り終了)::本論文についての説明
 The demand of telecommunications is grown with the spread of mobile phone users. To cope with the demand, ultrafast light wave communications and networks are essential. In current optical communication network, signal processing technology is used for electrical signal only, and thus, processing electric signal limits the efficiency of current optical communication network{\cite{App}}. So, all optical signal processing  without electrical processing has been developed and the development of all optical devices are required. In recent researches, 
 
-In this paper we propose an all optical error correcting encoder and decoder using horizontal and vertical parity checks. We numerically analyze the encoder and decoder to check input and output waveform of each systems. In addition, we show the performance and efficiency of the proposed code.
+To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
 
 \section{Optical Device}
 \subsection{PC-QDSOA}
@@ -154,37 +158,8 @@ Fig.{\ref{figure:decoder}} shows the block diagram of the decoder. First, the $1
 \newpage
 
 \section{Results and Discussion}
-We use Optisystem13.0.0 and MATLAB R2014a to numerically analyze the behavior of each optical devices at 160Gbps. We use rate equation and transfer matrix method (TMM) to numerically analyze QD-SOA{\cite{Rostami}}. The parameters used for the QD-SOA employed in this paper are shown in table {\ref{table:param}}.
+We use Optisystem14.0.0 and MATLAB R2014a to numerically analyze the behavior of each optical devices at 160Gbps. We use rate equation and nonlinear state space model (NSSM) to numerically analyze QD-SOA{\cite{Rostami}}. The parameters used for the QDSOA  and PC-QDSOA in this paper are shown in {\cite{qdsoa},\cite{pcqdsoa}}.
 
-\renewcommand{\arraystretch}{1.5}
-\begin{table}[htbp]
-\begin{center}
- \small
- \caption{The device parameters}
- \label{table:param}
- \begin{tabular}{c c c}
-  \hline
-  Description & Value & Unit \\
-  \hline
-  active medium length & $2.0 \times 10^{-3}$ & $m$ \\
-  effective thickness of the active layer & $ 0.25 \times 10^{-6}$ & $m$ \\
-  effective width of the active layer & $ 3.0 \times 10^{-6}$ & $m$ \\
-  surface density of QDs & $ 5.0 \times 10^{14}$ & $m^{-2}$ \\
-  electron relaxation time (WL to ES) & $ 3.0 \times 10^{-12}$ & $s$ \\
-  electron escape time (ES to WL) & $ 1.0 \times 10^{-9}$ & $s$ \\
-  spontaneous radiative lifetime in WL & $ 2.0 \times 10^{-9}$ & $s$ \\
-  electron relaxation time (ES to GS) & $ 0.16 \times 10^{-12}$ & $s$ \\
-  electron escape time (GS to ES) & $ 1.2 \times 10^{-12}$ & $s$ \\
-  spontaneous radiative lifetime in GS & $ 0.4 \times 10^{-9}$ & $s$ \\
-  injection current & $ 3.0 \times 10^{-2}$ & $A$ \\
-  maximum modal gain & $ 3.0 \times 10^{2}$ & $m^{-1}$ \\
-  line width enhancement factor & $ 2.0 \times 10^{2}$ & $-$ \\
-  absorption coefficient & $ 3.0 \times 10^{2}$ & $m^{-1}$ \\
-  \hline
-\end{tabular}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1.0}
 
 Fig.{\ref{figure:send_compare}} shows the information signal fed into the encoder and the encoded signal at the encoder output. The information signal patterns are ``1110'' and ``0110'' as shown in fig.{\ref{figure:send_compare}(a), and the encoded signal patterns are ``11100101'' and ``01101111'' as shown in fig.{\ref{figure:send_compare}}(b). Fig.{\ref{figure:passive_compare}} shows a received signal and decoded signal. The received signal patterns are ``11110101'' and ``00101111'' as shown in fig.{\ref{figure:passive_compare}}(a). Fig.{\ref{figure:passive_compare}}(a) shows error added received signal corresponding to fig.{\ref{figure:send_compare}}(b). The fourth bit of first pattern is error turned from ``0'' to ``1'' and the second bit of second pattern is error turned from ``1'' to ``0''. The first pattern and second pattern of the decoded signal are ``11100101'' and ``01101111'' respectively, as shown in fig.{\ref{figure:passive_compare}}(b). As a result, the encoder generates code and the decoder corrects error occurred signal at 160Gbps.
 
@@ -222,6 +197,12 @@ We have proposed an all optical encoder and decoder for error correcting code us
 \begin{thebibliography}{9}
 \bibitem{App} 
 Y.Ben-Ezra, U.Mahlab, M.Haridim, and B.I.Lembrikov, ``Applications of All-Optical Signal Processing in Modern Optical Communications, "Proc. 9th International Conf. on Transparent Opt. Networks, no.Tu.B4.4, pp.328--331, Rome, The Italy, Jul. 2007.
+
+\bibitem{qdsoa} 
+Kambiz Abedi, and Hussein Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of lightwave technology, vol. 30, no.12, pp.1924--1930, Jun. 2012.
+
+\bibitem{pcqdsoa} 
+Hussein Talebe, and Kambiz Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of quantum electronics, vol. 50, no. 8, pp.605--612, Aug. 2014.
 
 \bibitem{Omar} 
 Omar Qasaimeh, ``Theory of Four-Wave Mixing Wavelength Conversion in Quantum Dot Semiconductor Optical Amplifiers, " IEEE Photonics Technology Letters, vol.16, no.4, pp.993--995, Apr. 2004.
