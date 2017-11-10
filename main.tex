@@ -15,7 +15,7 @@
 
 \begin{document}
 
-\title{All-optical AND gate with photonic crystal quantum-dot semiconductor optical amplifiers}
+\title{All-optical NAND gate with photonic crystal quantum-dot semiconductor optical amplifiers}
 
 \name{Takuma Matsumoto, Gou Hosoya, and Hiroyuki Yashima}
 %%% The order of name is first name and family name. 
@@ -64,25 +64,26 @@ E-mail:  4416630@ed.tus.ac.jp
 
 \section*{Abstract}
 
-All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under ultrafast bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of proposed gate, we compare the proposed gate with conventional one in terms of volume reduction, energy consumption and performance.
+All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical negative AND(NAND) gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of proposed gate, we compare the proposed gate with conventional one in terms of length reduction, energy consumption and performance.
 
 \section{Introduction}
 % TODO1(一通り終了)::電子デバイスで信号処理が行われてきたことを説明
 % TODO2(一通り終了):今日、全光デバイスが研究されていることを説明(QD-SOA,PC,PC-QDSOA)
-% TODO3()::今日の研究で不足している点について説明
-% TODO4()::ANDゲートの利点を説明
-% TODO5(一通り終了)::本論文についての説明
+% TODO3(一通り終了)::今日の研究で不足している点について説明(Ring resonatorとかの長さについても述べたい)
+% TODO4(一通り終了)::本研究が必要な理由
+% TODO5()::NANDゲートの利点を説明
+% TODO6(一通り終了)::本論文についての説明
 
-Ultrafast and large capacity data transmission is required to cope with expanding network traffic data. In current optical network, optical signal goes to destination through optical fiber with being affected by noise. Thus, re-amplification, re-timing and re-shaping operations are essential for reliable optical network. These days, electronic devices realize these operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion. In order to cope with this problem, all-optical signal processing is required and many researchers researched and developed all-optical devices which realize this technology. Although realization 
-To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
+High-speed and large capacity data transmission is required to cope with expanding network traffic data. In current optical network, optical signal goes to destination through optical fiber with being affected by noise. Thus, re-amplification, re-timing and re-shaping operations are essential for reliable optical network. These days, electronic devices realize these operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion. In order to cope with this problem, all-optical signal processing is required and many researchers researched and developed all-optical devices which realize this technology. Although many AOLGs have been developed with utilizing various all-optical devices, these gate length are larger than one of electrical logic gates. For instance, the length of QDSOAs which are an all-optical device often used for AOLGs is about 2mm, whereas the one of transistors used for commercially available electronic devices is about 40nm. Many researches don't discuss about the device length which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical NAND gate. Especially, the NAND gate plays 
+To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical NAND gate. The results in this paper show that the realization of the all-optical NAND gate is feasible with the proposed PC-QDSOA assisted all-optical NAND gate at 160Gb/s.
 
 \section{Optical Device}
 % TODO::PC-QDSOAのモデル図
 \subsection{PC-QDSOA}
 
 
-\subsection{All Optical AND Gate}
-Fig.{\ref{figure:xor_gate}} shows the configuration of all optical AND gate using quantum dot semiconductor optical amplifier(QD-SOA){\cite{Omar}}--{\cite{Ultrafast}}. Two QD-SOA devices and 3dB couplers compose all optical XOR gate. QD-SOA is an optical device used for optical amplifier and modulates phase of output optical signal depending on input optical signal strength.
+\subsection{All Optical NAND Gate}
+Fig.{\ref{figure:xor_gate}} shows the configuration of all optical NAND gate using quantum dot semiconductor optical amplifier(QD-SOA){\cite{Omar}}--{\cite{Ultrafast}}. Two QD-SOA devices and 3dB couplers compose all optical XOR gate. QD-SOA is an optical device used for optical amplifier and modulates phase of output optical signal depending on input optical signal strength.
 
 First, the $1 \times 2$ coupler separates clock signal into two waveguides. The clock signal traveling through the upper waveguide and the lower waveguide are fed into the QD-SOA1 and QD-SOA2, respectively. The QD-SOA1 and QD-SOA2 modulate the phase of clock signal by $\phi_{A}$ and $\phi_{B}$ according to input optical signal A and B, respectively. If the phase of the output signal of QD-SOA1 is equal to that of QD-SOA2, the output signals are coupled by the $2 \times 1$ coupler and cancel each other, and thus, the output of the coupler is ``0''. If the phase of the output signal of the QD-SOA1 is different from that of the QD-SOA2 by $\pi$, the output signals are coupled by $2 \times 1$ coupler and the output signal is obtained as ``1''. Thus, table {\ref{table:xor_table}} shows a truth table of all optical XOR gate.
 
