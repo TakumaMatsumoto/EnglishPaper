@@ -15,7 +15,7 @@
 
 \begin{document}
 
-\title{All-optical NAND gate with photonic crystal quantum-dot semiconductor optical amplifiers}
+\title{All-optical AND gate with photonic crystal quantum-dot semiconductor optical amplifiers}
 
 \name{Takuma Matsumoto, Gou Hosoya, and Hiroyuki Yashima}
 %%% The order of name is first name and family name. 
@@ -64,7 +64,7 @@ E-mail:  4416630@ed.tus.ac.jp
 
 \section*{Abstract}
 
-All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical negative AND(NAND) gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of proposed gate, we compare the proposed gate with conventional one in terms of length reduction, energy consumption and performance.
+All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of proposed gate, we compare the proposed gate with conventional one in terms of length reduction, energy consumption and performance.
 
 \section{Introduction}
 % TODO1(一通り終了)::電子デバイスで信号処理が行われてきたことを説明
@@ -74,8 +74,8 @@ All-optical logic gates(AOLGs) are composed of all-optical devices which can ope
 % TODO5()::NANDゲートの利点を説明
 % TODO6(一通り終了)::本論文についての説明
 
-High-speed and large capacity data transmission is required to cope with expanding network traffic data. In current optical network, optical signal goes to destination through optical fiber with being affected by noise. Thus, re-amplification, re-timing and re-shaping operations are essential for reliable optical network. These days, electronic devices realize these operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion. In order to cope with this problem, all-optical signal processing is required and many researchers researched and developed all-optical devices which realize this technology. Although many AOLGs have been developed with utilizing various all-optical devices, these gate length are larger than one of electrical logic gates. For instance, the length of QDSOAs which are an all-optical device often used for AOLGs is about 2mm, whereas the one of transistors used for commercially available electronic devices is about 40nm. Many researches don't discuss about the device length which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical NAND gate. Especially, the NAND gate plays 
-To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical NAND gate. The results in this paper show that the realization of the all-optical NAND gate is feasible with the proposed PC-QDSOA assisted all-optical NAND gate at 160Gb/s.
+High-speed and large capacity data transmission is required to cope with expanding network traffic data. In current optical network, optical signal goes to destination through optical fiber with being affected by noise. Thus, re-amplification, re-timing and re-shaping operations are essential for reliable optical network. These days, electronic devices realize these operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion. In order to cope with this problem, all-optical signal processing is required and many researchers researched and developed all-optical devices which realize this technology. Although many AOLGs have been developed with utilizing various all-optical devices, these gate length are larger than one of electrical logic gates. For instance, the length of QDSOAs which are an all-optical device often used for AOLGs is about 2mm, whereas the one of transistors used for commercially available electronic devices is about 40nm. Many researches don't discuss about the device length which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical AND gate. Especially, AND gate plays important role for constructing encoder or decoder because 
+To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
 
 \section{Optical Device}
 % TODO::PC-QDSOAのモデル図
