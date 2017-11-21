@@ -68,20 +68,38 @@ E-mail:  4416630@ed.tus.ac.jp
 All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of proposed gate, we compare the proposed gate with conventional one in terms of length reduction, energy consumption and performance.
 
 \section{Introduction}
-% TODO1(一通り終了)::電子デバイスで信号処理が行われてきたことを説明
-% TODO2(一通り終了):今日、全光デバイスが研究されていることを説明(QD-SOA,PC,PC-QDSOA)
-% TODO3(一通り終了)::今日の研究で不足している点について説明(Ring resonatorとかの長さについても述べたい)
-% TODO4(一通り終了)::本研究が必要な理由
-% TODO5(一通り終了)::ANDゲートの利点を説明
-% TODO6(一通り終了)::本論文についての説明
+% TODO(一通り終了)::電子デバイスで信号処理が行われてきたことを説明
+% TODO(一通り終了):今日、全光デバイスが研究されていることを説明(QD-SOA,PC,PC-QDSOA)
+% TODO(一通り終了)::今日の研究で不足している点について説明(Ring resonatorとかの長さについても述べたい)
+% TODO(一通り終了)::本研究が必要な理由
+% TODO(一通り終了)::ANDゲートの利点を説明
+% TODO(一通り終了)::本論文についての説明
 
-High-speed and large capacity data transmission is required to cope with expanding network traffic data. In current optical network, optical signal goes to destination through optical fiber with being affected by noise. Thus, re-amplification, re-timing and re-shaping operations are essential for reliable optical network. These days, electronic devices realize these operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion. In order to cope with these problems, all-optical signal processing is required and many researchers worked on and developed all-optical devices which realize this technology. Especially, AOLGs are essential for operating binary data. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates because all-optical devices require length to operate as a component of AOLGs. For instance, a length of QDSOA, known as a component of AOLGs, is about 2mm, whereas the one of transistors, used for commercially available electronic devices, is about 40nm. Few researches discuss about the length of device which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical AND gate. AND gate plays an important role for multiplexer and demultiplexer circuits whose applications are communication system, computer memory and arithmetic logic unit. To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
+High-speed and large capacity data transmission is required to cope with expanding network traffic data. In current optical network, optical signal goes to destination through optical fiber with being affected by noise. Thus, re-amplification, re-timing and re-shaping operations are essential for reliable optical network. These days, electronic devices realize these operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion. In order to cope with these problems, all-optical signal processing is required and many researchers worked on and developed all-optical devices which realize this technology. Especially, AOLGs are essential for operating binary data. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates because all-optical devices require length to operate as a component of AOLGs. For instance, a length of QDSOA, known as a component of AOLGs, is about 2mm{\cite{qdsoa}}, whereas the one of transistors, used for commercially available electronic devices, is about 40nm. Few researches discuss about the length of device which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical AND gate. AND gate plays an important role for multiplexer and demultiplexer circuits whose applications are communication system, computer memory and arithmetic logic unit. To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
 
-% TODO::使用するPC-QDSOAのモデル
-% TODO::提案するANDゲートの構成図
-% TODO::結果・考察
+\section{Numerical analysis}
+% TODO()::使用するPC-QDSOAのモデル
+% TODO()::PC-QDSOAの解析方法
+% TODO()::数値解析の条件(波長・光強度)
+% TODO()::提案するANDゲートの構成図
+% TODO()::提案するANDゲートの動作原理
+The PC-QDSOAs used in this study . The operation of the PC-QDSOA can be numerically analyzed by means of a rate equation model and wave propagation equation{\cite{pcqdsoa}}. Physical parameters and these equations related to numerical analysis can be found in {\cite{pcqdsoa}}. The schematic diagram of PC-QDSOA is illustrated in Fig.{\ref{fig:pcqdsoa}}. 
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=80mm]{QDSOA_Based_XOR.eps}
+  \caption{Schematic diagram of PC-QDSOA}
+  \label{fig:pcqdsoa}
+\end{center}
+\end{figure}
+
+\section{Results}
+% TODO()::注入電流を変化させたときの結果(これだけで十分かな?)
+% TODO()::光強度を変化させたときの結果
+% TODO()::QDSOAとの比較(結果は載せなくていい?)
+
 \section{Conclusion}
-We have proposed an all optical encoder and decoder for error correcting code using horizontal and vertical parity checks and numerically analyzed the proposed system. We evaluate the performance of the proposed system by using eye diagram and extinction ratio. As a result, the proposed encoder and decoder obtain an encoded code and error corrected signal at 160Gbps, respectively, and it is shown that the proposed encoder and decoder obtain sufficient extinction ratio.
+We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s. for error correcting code using horizontal and vertical parity checks and numerically analyzed the proposed system. We evaluate the performance of the proposed system by using eye diagram and extinction ratio. As a result, the proposed encoder and decoder obtain an encoded code and error corrected signal at 160Gbps, respectively, and it is shown that the proposed encoder and decoder obtain sufficient extinction ratio.
 
 \begin{thebibliography}{9}
 \bibitem{App} 
