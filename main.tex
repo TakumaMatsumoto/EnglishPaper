@@ -82,6 +82,7 @@ High-speed and large capacity data transmission is required to cope with expandi
 % TODO(一通り終了)::使用するPC-QDSOAのPCWモデル
 % TODO(一通り終了)::PC-QDSOAの解析方法
 % TODO()::提案するANDゲートの構成図
+% TODO()::提案するANDゲートの動作原理
 The PC-QDSOAs used in this study are composed of GaAs, doped GaAs, ${\rm{In_{0.15}Ga_{0.85}As}}$ and InAs as an active region to enhance optical power around ${\rm{1.3\mu m}}$. The population inversion in the active regions of amplifiers is achieved by passing current through laterally doped ${\rm{p^{+}-p-n^{+}}}$ structures. Also, the waveguide of the PC-QDSOA is W1 PCW wherein slow light can be achieved with either zero group velocity dispersion and zero third order dispersion. This waveguide can be archived by proper shifting and narrowing of the first two rows of air holes adjacent to the waveguide core. The schematic diagram of PC-QDSOA is illustrated in Fig.{\ref{fig:pcqdsoa}}. On the other hand, in order to numerically analyze the operation of the PC-QDSOA, we use a rate equation model and wave propagation equation{\cite{pcqdsoa}} with using nonlinear state space model(NSSM). More details about the PC-QDSOA and physical parameters related to numerical analysis can be found in {\cite{pcqdsoa}}. 
 
 \begin{figure}[htbp]
@@ -93,6 +94,16 @@ The PC-QDSOAs used in this study are composed of GaAs, doped GaAs, ${\rm{In_{0.1
 \end{figure}
 
 \newpage
+
+The schematic diagram and the truth table of the PC-QDSOA assisted all-optical AND gate are shown in Fig.{\ref{fig:and_gate}}. The AND operation principle is as follows: 
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=80mm]{QDSOA_Based_XOR.eps}
+  \caption{Schematic diagram and truth table of PC-QDSOA assisted AND gate}
+  \label{fig:and_gate}
+\end{center}
+\end{figure}
 
 \section{Results}
 % TODO()::数値解析の条件(波長・光強度)
@@ -106,29 +117,11 @@ The PC-QDSOAs used in this study are composed of GaAs, doped GaAs, ${\rm{In_{0.1
 We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram and extinction ratio. The results show the proposed gate can operate at 160Gb/s when current injection is over 3mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
 
 \begin{thebibliography}{9}
-\bibitem{App} 
-Y.Ben-Ezra, U.Mahlab, M.Haridim, and B.I.Lembrikov, ``Applications of All-Optical Signal Processing in Modern Optical Communications, "Proc. 9th International Conf. on Transparent Opt. Networks, no.Tu.B4.4, pp.328--331, Rome, The Italy, Jul. 2007.
-
 \bibitem{qdsoa} 
 Kambiz Abedi, and Hussein Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of lightwave technology, vol. 30, no.12, pp.1924--1930, Jun. 2012.
 
 \bibitem{pcqdsoa} 
 Hussein Talebe, and Kambiz Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of quantum electronics, vol. 50, no. 8, pp.605--612, Aug. 2014.
-
-\bibitem{Omar} 
-Omar Qasaimeh, ``Theory of Four-Wave Mixing Wavelength Conversion in Quantum Dot Semiconductor Optical Amplifiers, " IEEE Photonics Technology Letters, vol.16, no.4, pp.993--995, Apr. 2004.
-
-\bibitem{Ultrafast} 
-Y.Ben-Ezra, B.I.Lembrikov, and M.Haridim, ``Ultrafast All-Optical  Processor Based on Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of Quantum Electronics, vol.45, no.1, pp.34--41, Jan. 2009.
-
-\bibitem{80Gbps}
-H.Dong, H.Sun, Q.Wang, N.K.Dutta, and J.Jaques, ``80 Gb/s All-optical logic AND operation using Mach-Zehnder interferometer with differential scheme, '' Optics Communications, vol.265, no.1, pp.79--83, Sep. 2006.
-
-\bibitem{Rostami}
-Ali Rostami, Hamed Baghban Asghari Nejad, Reza Maram Qartavol, and Hassan Rasooli Saghai, ``Tb/s Optical Logic Gates Based on Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of Quantum Electronics, vol.46, no.3, pp.354--360, Mar. 2010.
-
-\bibitem{Gayen}
-D.K.Gayen, A.Bhattachryya, T.Chattopadhyay, and J.N.Roy, ``Ultrafast All-Optical Half Adder Using Quantum-Dot Semiconductor Optical Amplifier-Based Mach-Zehnder Interferometer, " IEEE Journal of Lightwave Technology, vol.30, no.21, pp.3387--3393, Nov. 2012.
 
 \end{thebibliography}
 
