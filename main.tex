@@ -82,7 +82,7 @@ High-speed and large capacity data transmission is required to cope with expandi
 % TODO(一通り終了)::使用するPC-QDSOAのPCWモデル
 % TODO(一通り終了)::PC-QDSOAの解析方法
 % TODO()::提案するANDゲートの構成図
-% TODO()::提案するANDゲートの動作原理
+% TODO(一通り終了)::提案するANDゲートの動作原理
 The PC-QDSOAs used in this study are composed of GaAs, doped GaAs, ${\rm{In_{0.15}Ga_{0.85}As}}$ and InAs as an active region to enhance optical power around ${\rm{1.3\mu m}}$. The population inversion in the active regions of amplifiers is achieved by passing current through laterally doped ${\rm{p^{+}-p-n^{+}}}$ structures. Also, the waveguide of the PC-QDSOA is W1 PCW wherein slow light can be achieved with either zero group velocity dispersion and zero third order dispersion. This waveguide can be archived by proper shifting and narrowing of the first two rows of air holes adjacent to the waveguide core. The schematic diagram of PC-QDSOA is illustrated in Fig.{\ref{fig:pcqdsoa}}. On the other hand, in order to numerically analyze the operation of the PC-QDSOA, we use a rate equation model and wave propagation equation{\cite{pcqdsoa}} with using nonlinear state space model(NSSM). More details about the PC-QDSOA and physical parameters related to numerical analysis can be found in {\cite{pcqdsoa}}. 
 
 \begin{figure}[htbp]
@@ -95,7 +95,7 @@ The PC-QDSOAs used in this study are composed of GaAs, doped GaAs, ${\rm{In_{0.1
 
 \newpage
 
-The schematic diagram and the truth table of the PC-QDSOA assisted all-optical AND gate are shown in Fig.{\ref{fig:and_gate}}. The AND operation principle is as follows: 
+The schematic diagram and the truth table of the PC-QDSOA assisted all-optical AND gate are shown in Fig.{\ref{fig:and_gate}}. The AND operation principle is as follows: a modulated data signals A (at wavelength $\lambda_{1}$) and a clock signals (at wavelength $\lambda_{2}$) are injected into the PC-QDSOA1. Then signals A will induce less gain amplifier on a clock signals via cross-gain modulation(XGM) in the PC-QDSOA1 and the logic outcome is NOT A. In the same way as this operation, a modulated data signals NOT A (at wavelength $\lambda_{2}$) and a modulated data signals B (at wavelength $\lambda_{3}$) are injected into the PC-QDSOA2 and the logic outcome is A AND B.
 
 \begin{figure}[htbp]
 \begin{center}
