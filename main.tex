@@ -95,7 +95,7 @@ The PC-QDSOAs used in this study are composed of GaAs, doped GaAs, ${\rm{In_{0.1
 
 \newpage
 
-The schematic diagram and the truth table of the PC-QDSOA assisted all-optical AND gate are shown in Fig.{\ref{fig:and_gate}}. The AND operation principle is as follows: a modulated data signals A (at wavelength $\lambda_{1}$) and a clock signals (at wavelength $\lambda_{2}$) are injected into the PC-QDSOA1. Then signals A will induce less gain amplifier on a clock signals via cross-gain modulation(XGM) in the PC-QDSOA1 and the logic outcome is NOT A. In the same way as this operation, a modulated data signals NOT A (at wavelength $\lambda_{2}$) and a modulated data signals B (at wavelength $\lambda_{3}$) are injected into the PC-QDSOA2 and the logic outcome is A AND B.
+The schematic diagram and the truth table of the PC-QDSOA assisted all-optical AND gate are shown in Fig.{\ref{fig:and_gate}}. The AND operation principle is as follows: a modulated data signal A (at wavelength $\lambda_{A}$) and a clock signal (at wavelength $\lambda_{C}$) are injected into the PC-QDSOA1. Then the signal A will induce less gain amplifier on a clock signal via cross-gain modulation(XGM) in the PC-QDSOA1 and the logic outcome is NOT A. In the same way as this operation, a modulated data signal NOT A (at wavelength $\lambda_{C}$) and a modulated data signal B (at wavelength $\lambda_{B}$, which can be the same as the wavelength of data A) are injected into the PC-QDSOA2 and the logic outcome is A AND B.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -106,12 +106,21 @@ The schematic diagram and the truth table of the PC-QDSOA assisted all-optical A
 \end{figure}
 
 \section{Results}
-% TODO()::数値解析の条件(波長・光強度)
+% TODO(一通り終了)::数値解析の条件(波長・光強度)
+% TODO()::入力信号と出力結果(条件を示したい)
+% TODO()::出力結果のアイダイヤグラム
 % TODO()::注入電流を変化させたときの結果(これだけで十分かな?)
-% TODO()::光強度を変化させたときの結果
+% TODO()::光強度を変化させたときの結果(結果を載せるスペースがあるか?)
 % TODO()::QDSOAとの比較(結果を載せるスペースがあるか?)
+The parameters and results are shown in this section. In order to investigate the quality of AND operation, pump current power and the powers of input signals are modified. The fixed parameters are the wavelength of data signals and a width of pulse. The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307nm$ and $\lambda_{C} = 1310nm$, respectively. The pulses are Gaussian-shaped with a width of 1.2ps. Fig.{\ref{fig:output_signal}} shows the analysis results of the binary outcome and eye diagram for the AND gate for indicative patterns of data signals A and B with 5mA pump current at 160Gb/s. The extinction ratio of the output signal is about [pending] dB owing to the fast gain recovery.
 
-
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=80mm]{QDSOA_Based_XOR.eps}
+  \caption{Simulation results of PC-QDSOA assisted AND gate operation}
+  \label{fig:output_signal}
+\end{center}
+\end{figure}
 
 \section{Conclusion}
 We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram and extinction ratio. The results show the proposed gate can operate at 160Gb/s when current injection is over 3mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
