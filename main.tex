@@ -87,7 +87,7 @@ The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}A
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{QDSOA_Based_XOR.eps}
+  \includegraphics[width=70mm]{QDSOA_Based_XOR.eps}
   \caption{Schematic diagram of PC-QDSOA}
   \label{fig:pcqdsoa}
 \end{center}
@@ -99,7 +99,7 @@ The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in 
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{QDSOA_Based_XOR.eps}
+  \includegraphics[width=70mm]{QDSOA_Based_XOR.eps}
   \caption{Schematic diagram and truth table of PC-QDSOA assisted AND gate}
   \label{fig:and_gate}
 \end{center}
@@ -107,18 +107,36 @@ The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in 
 
 \section{Results}
 % TODO(一通り終了)::数値解析の条件(波長・光強度)
-% TODO()::入力信号と出力結果(条件を示したい)
-% TODO()::出力結果のアイダイヤグラム
-% TODO()::注入電流を変化させたときの結果(これだけで十分かな?)
-% TODO()::光強度を変化させたときの結果(結果を載せるスペースがあるか?)
-% TODO()::QDSOAとの比較(結果を載せるスペースがあるか?)
-The parameters and results are shown in this section. In order to investigate the quality of AND operation, pump current power and the powers of input signals are modified. The fixed parameters are the wavelength of data signals and a width of pulse. The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively. The pulses are Gaussian-shaped with a width of 1.2ps. Fig.{\ref{fig:output_signal}} shows the analysis results of the binary outcome and eye diagram for the AND gate for indicative patterns of data signals A and B with 5mA pump current at 160Gb/s. The extinction ratio of the output signal is about [pending] dB owing to the fast gain recovery.
+% TODO(結果の画像を載せる)::入力信号と出力結果(条件を示したい)
+% TODO(結果の画像を載せる)::出力結果のアイダイヤグラム
+% TODO(結果の画像を載せる)::注入電流を変化させたときの結果(これだけで十分かな?)
+% TODO(結果の画像を載せる)::光強度を変化させたときの結果(結果を載せるスペースがあるか?)
+The parameters and results are shown in this section. In order to investigate the quality of AND operation, pump current power and the powers of input signals are modified. The fixed parameters are the wavelength of data signals, bit rate and a width of pulse. The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively. The bit rate is 160Gb/s. The pulses are Gaussian-shaped with a width of 1.2ps. Fig.{\ref{fig:output_signal}} shows the analysis results of the binary outcome when the power of pump current is 5mA and the max power of signals A, B and clock are 10mW, 0.1mW and ${\rm 1 \mu W}$, respectively. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig.{\ref{fig:eye_dia}} shows an eye diagram for the output result and the extinction ratio of the output signal is [pending] dB.
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{QDSOA_Based_XOR.eps}
-  \caption{Simulation results of PC-QDSOA assisted AND gate operation}
+  \includegraphics[width=70mm]{QDSOA_Based_XOR.eps}
+  \caption{Analysis results of PC-QDSOA assisted AND gate operation}
   \label{fig:output_signal}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=70mm]{QDSOA_Based_XOR.eps}
+  \caption{Eyediagram of output result}
+  \label{fig:eye_dia}
+\end{center}
+\end{figure}
+
+On the other hand, because the gain recovery time varies due to the power of pump current, it is necessary to investigate on the effect on power of pump current to the proposed AND gate. From fig.{\ref{fig:different_pump_current}}, it is said that the extinction ratio is improving with increasing power of pump current because pattern-effect is decreasing.
+
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=70mm]{QDSOA_Based_XOR.eps}
+  \caption{Eyediagram of output result}
+  \label{fig:different_pump_current}
 \end{center}
 \end{figure}
 
@@ -127,10 +145,10 @@ We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and
 
 \begin{thebibliography}{9}
 \bibitem{qdsoa} 
-Kambiz Abedi, and Hussein Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of lightwave technology, vol. 30, no.12, pp.1924--1930, Jun. 2012.
+K. Abedi, and H. Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " {\it J. Lightw. Technol.}, vol. 32, no.12, pp. 1924--1930, Jun. 2012.
 
 \bibitem{pcqdsoa} 
-Hussein Talebe, and Kambiz Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of quantum electronics, vol. 50, no. 8, pp.605--612, Aug. 2014.
+H. Taleb, and K. Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " {\it IEEE J. Quantum Electron.}, vol. 50, no. 8, pp.605--612, Aug. 2014.
 
 \end{thebibliography}
 
@@ -149,7 +167,7 @@ Fig.{\ref{figure:xor_gate}} shows the configuration of all optical AND gate usin
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{QDSOA_Based_XOR.eps}
+  \includegraphics[width=70mm]{QDSOA_Based_XOR.eps}
   \caption{The configuration of QDSOA based AND gate}
  \label{figure:xor_gate}
 \end{center}
@@ -200,7 +218,7 @@ Fig.{\ref{figure:encoder}} shows the block diagram of the encoder. First, the $1
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{Encoder.eps}
+  \includegraphics[width=70mm]{Encoder.eps}
   \caption{The block diagram of encoder}
  \label{figure:encoder}
 \end{center}
@@ -227,7 +245,7 @@ Fig.{\ref{figure:send_compare}} shows the information signal fed into the encode
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{send_compare.eps}
+  \includegraphics[width=70mm]{send_compare.eps}
   \caption{The waveforms of information signal (a) and encoded code (b) }
   \label{figure:send_compare}
 \end{center}
@@ -235,7 +253,7 @@ Fig.{\ref{figure:send_compare}} shows the information signal fed into the encode
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{passive_compare.eps}
+  \includegraphics[width=70mm]{passive_compare.eps}
   \caption{The waveforms of received signal (a) and decoded signal (b) }
   \label{figure:passive_compare}
 \end{center}
