@@ -11,7 +11,6 @@
 \usepackage{color}
 \usepackage{ascmac}
 \usepackage{graphicx}
-\usepackage{comment}
 \graphicspath{{./Figure/}}
 
 \begin{document}
@@ -121,7 +120,23 @@ The parameters and results are shown in this section. In order to investigate th
 \end{center}
 \end{figure}
 
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=80mm]{and_gate.eps}
+  \caption{Eyediagram}
+  \label{fig:eye_dia}
+\end{center}
+\end{figure}
+
 On the other hand, because the gain recovery time varies due to the power of pump current, it is necessary to investigate on the effect on power of pump current to the proposed AND gate. From fig.{\ref{fig:different_pump_current}}, it is said that the extinction ratio is improving with increasing power of pump current because pattern-effect is decreasing.
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=80mm]{and_gate.eps}
+  \caption{Eyediagram}
+  \label{fig:different_pump_current}
+\end{center}
+\end{figure}
 
 \section{Conclusion}
 We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram and extinction ratio. The results show the proposed gate can operate at 160Gb/s when current injection is over 3mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
@@ -134,3 +149,5 @@ K. Abedi, and H. Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconduct
 H. Taleb, and K. Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " {\it IEEE J. Quantum Electron.}, vol. 50, no. 8, pp.605--612, Aug. 2014.
 
 \end{thebibliography}
+
+\end{document}
