@@ -107,12 +107,11 @@ The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in 
 
 \section{Results}
 % TODO(一通り終了)::数値解析の条件(波長・光強度)
-% TODO()::入力信号と出力結果(条件を示したい)
-% TODO()::出力結果のアイダイヤグラム
-% TODO()::注入電流を変化させたときの結果(これだけで十分かな?)
-% TODO()::光強度を変化させたときの結果(結果を載せるスペースがあるか?)
-% TODO()::QDSOAとの比較(結果を載せるスペースがあるか?)
-The parameters and results are shown in this section. In order to investigate the quality of AND operation, pump current power and the powers of input signals are modified. The fixed parameters are the wavelength of data signals and a width of pulse. The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively. The pulses are Gaussian-shaped with a width of 1.2ps. Fig.{\ref{fig:output_signal}} shows the analysis results of the binary outcome and eye diagram for the AND gate for indicative patterns of data signals A and B with 5mA pump current at 160Gb/s. The extinction ratio of the output signal is about [pending] dB owing to the fast gain recovery.
+% TODO(結果の画像を載せる)::入力信号と出力結果(条件を示したい)
+% TODO(結果の画像を載せる)::出力結果のアイダイヤグラム
+% TODO(結果の画像を載せる)::注入電流を変化させたときの結果(これだけで十分かな?)
+% TODO(結果の画像を載せる)::光強度を変化させたときの結果(結果を載せるスペースがあるか?)
+The parameters and results are shown in this section. In order to investigate the quality of AND operation, pump current power and the powers of input signals are modified. The fixed parameters are the wavelength of data signals, bit rate and a width of pulse. The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively. The bit rate is 160Gb/s. The pulses are Gaussian-shaped with a width of 1.2ps. Fig.{\ref{fig:output_signal}} shows the analysis results of the binary outcome when the power of pump current is 5mA and the max power of signals A, B and clock are 10mW, 0.1mW and ${\rm 1 \mu W}$, respectively. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig.{\ref{fig:eye_dia}} shows an eye diagram for the output result and the extinction ratio of the output signal is [pending] dB.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -122,140 +121,16 @@ The parameters and results are shown in this section. In order to investigate th
 \end{center}
 \end{figure}
 
+On the other hand, because the gain recovery time varies due to the power of pump current, it is necessary to investigate on the effect on power of pump current to the proposed AND gate. From fig.{\ref{fig:different_pump_current}}, it is said that the extinction ratio is improving with increasing power of pump current because pattern-effect is decreasing.
+
 \section{Conclusion}
 We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram and extinction ratio. The results show the proposed gate can operate at 160Gb/s when current injection is over 3mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
 
 \begin{thebibliography}{9}
 \bibitem{qdsoa} 
-Kambiz Abedi, and Hussein Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of lightwave technology, vol. 30, no.12, pp.1924--1930, Jun. 2012.
+K. Abedi, and H. Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " {\it J. Lightw. Technol.}, vol. 32, no.12, pp. 1924--1930, Jun. 2012.
 
 \bibitem{pcqdsoa} 
-Hussein Talebe, and Kambiz Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " IEEE Journal of quantum electronics, vol. 50, no. 8, pp.605--612, Aug. 2014.
+H. Taleb, and K. Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " {\it IEEE J. Quantum Electron.}, vol. 50, no. 8, pp.605--612, Aug. 2014.
 
 \end{thebibliography}
-
-
-
-
-\begin{comment}
-
-\section{Optical Device}
-% TODO::PC-QDSOAのモデル図
-\subsection{PC-QDSOA}
-
-
-\subsection{All Optical AND Gate}
-Fig.{\ref{figure:xor_gate}} shows the configuration of all optical AND gate using quantum dot semiconductor optical amplifier(QDSOA){\cite{Omar}}--{\cite{Ultrafast}}. Two QD-SOA devices and 3dB couplers compose all optical XOR gate. QD-SOA is an optical device used for optical amplifier and modulates phase of output optical signal depending on input optical signal strength.
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=80mm]{QDSOA_Based_XOR.eps}
-  \caption{The configuration of QDSOA based AND gate}
- \label{figure:xor_gate}
-\end{center}
-\end{figure}
-
-\renewcommand{\arraystretch}{1.5}
-\begin{table}[htbp]
-\begin{center}
- \small
- \caption{A truth table of all optical XOR gate}
- \label{table:xor_table}
- \begin{tabular}{c c c}
-  \hline
-  InputA & InputB & Output \\
-  \hline
-  $0$ & $0$ & $0$ \\
-  $0$ & $1$ & $1$ \\
-  $1$ & $0$ & $1$ \\
-  $1$ & $1$ & $0$ \\
-  \hline
-  \end{tabular}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1.0}
-
-\newpage
-
-\section{All-optical AND gate with photonic crystal quantum-dot semiconductor optical amplifiers}
-\subsection{Horizontal and Vertical Parity Checks}
-Fig.{\ref{figure:checks}} shows the placement of horizontal and vertical parity checks. We use 8-bit-length checks composed of 4-bit-length data and 4-bit-length parity. $x_1,x_2,x_3,x_4$ are referred to as data bit and $x_5,x_6,x_7,x_8$ are referred to as parity bit. Parity bits are calculated as the following equation.
-\begin{eqnarray}
-  x_5 = x_1 \oplus x_2 \\
-  x_6 = x_3 \oplus x_4 \\
-  x_7 = x_1 \oplus x_3 \\
-  x_8 = x_2 \oplus x_4 
-\end{eqnarray}
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=22mm]{Parity.eps}
-  \caption{Horizontal and vertical parity checks}
-  \label{figure:checks}
-\end{center}
-\end{figure}
-
-\subsection{Encoder}
-Fig.{\ref{figure:encoder}} shows the block diagram of the encoder. First, the $1 \times 5$ splitter separates information signal into five waveguides. The four of five waveguides are used for generating parity. Delay elements are used to adjust the timing of each data bits and they are fed into the $1 \times 2$ splitters. Each XOR gates generate one bit of parity and after delaying each bits, the $4 \times 1$ power combiner combines each bits to convert the parallel signal to serial one. Finally, the $2 \times 1$ power combiner combines transmitted signal and generated parity to generate encoded code.
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=80mm]{Encoder.eps}
-  \caption{The block diagram of encoder}
- \label{figure:encoder}
-\end{center}
-\end{figure}
-
-\subsection{Decoder}
-Fig.{\ref{figure:decoder}} shows the block diagram of the decoder. First, the $1 \times 3$ splitter separates received signal into three waveguides. Filter1 picks out only the parity bits in received signal and filter2 picks out only the data bits in received signal. The data bits outputted from filter2 generate parity. The received parity and the generated parity are fed into XOR gate to generate error pattern. We can find out which bit is wrong according to error pattern. If one of the data bits in received signal is wrong, error pattern has two bits whose power is ``1''. The error pattern signal is fed into the $1 \times 4$ splitter and signals travel through four waveguides. After delay elements adjust the timing of each data bits and they are fed into the $1 \times 2$ splitters, AND gates  generate the signal representing which bit is error. The $4 \times 1$ power combiner combines generated signal to convert parallel signal to serial one. Finally, the generated signal and received signal are fed into XOR gate to generate error corrected code.
-
-\begin{figure*}[htbp]
-\begin{center}
-  \includegraphics[width=140mm]{Decoder.eps}
-  \caption{The block diagram of decoder}
-  \label{figure:decoder}
-\end{center}
-\end{figure*}
-
-\newpage
-
-\section{Results and Discussion}
-We use Optisystem14.0.0 and MATLAB R2014a to numerically analyze the behavior of each optical devices at 160Gbps. We use rate equation and nonlinear state space model (NSSM) to numerically analyze QD-SOA{\cite{Rostami}}. The parameters used for the QDSOA  and PC-QDSOA in this paper are shown in {\cite{qdsoa},\cite{pcqdsoa}}.
-
-
-Fig.{\ref{figure:send_compare}} shows the information signal fed into the encoder and the encoded signal at the encoder output. The information signal patterns are ``1110'' and ``0110'' as shown in fig.{\ref{figure:send_compare}(a), and the encoded signal patterns are ``11100101'' and ``01101111'' as shown in fig.{\ref{figure:send_compare}}(b). Fig.{\ref{figure:passive_compare}} shows a received signal and decoded signal. The received signal patterns are ``11110101'' and ``00101111'' as shown in fig.{\ref{figure:passive_compare}}(a). Fig.{\ref{figure:passive_compare}}(a) shows error added received signal corresponding to fig.{\ref{figure:send_compare}}(b). The fourth bit of first pattern is error turned from ``0'' to ``1'' and the second bit of second pattern is error turned from ``1'' to ``0''. The first pattern and second pattern of the decoded signal are ``11100101'' and ``01101111'' respectively, as shown in fig.{\ref{figure:passive_compare}}(b). As a result, the encoder generates code and the decoder corrects error occurred signal at 160Gbps.
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=80mm]{send_compare.eps}
-  \caption{The waveforms of information signal (a) and encoded code (b) }
-  \label{figure:send_compare}
-\end{center}
-\end{figure}
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=80mm]{passive_compare.eps}
-  \caption{The waveforms of received signal (a) and decoded signal (b) }
-  \label{figure:passive_compare}
-\end{center}
-\end{figure}
-
-\newpage
-
-We use eye diagram and obtain extinction ratio as appropriate metrics. The equation of extinction ratio is $ER(dB)=10log_{10}(P^{1}_{\min}/P^{0}_{\max})$ where $P^{1}_{\min}$ is minimum power of signal representing ``1'' and $P^{0}_{\max}$ is maximum power of signal representing ``0''. Fig.{\ref{figure:eyedia}} shows an eye diagram of the decoded signal. We show the proposed system is effective according to 5.72(dB) extinction ratio{\cite{Gayen}}.
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=60mm]{eyedia.eps}
-  \caption{Eye diagram of decoded signal}
-  \label{figure:eyedia}
-\end{center}
-\end{figure}
-
-\end{comment}
-
-\end{document}
-
-
-
