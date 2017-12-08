@@ -73,15 +73,15 @@ High-speed and large capacity data transmission is required to cope with expandi
 % QDSOAについての話
 QDSOA is one of these devices which can be useful in many applications because of it's fast gain recovery time and nonlinear optics effect{\cite{qdsoa_aosp}}. QD's confinement of electrons and electron holes enables fast gain recovery and SOA's gain saturation enables nonlinear optics effect, respectively.
 % PCについての話
-On the other hand, the PC is a dielectric material which consists of two different refractive indexes periodically. The lightwaves in specific bandwidth cannot propagate through the PC. PC waveguides(PCWs) use this characteristic which can be obtained PC slab with creating a line defect. They can confine the lightwaves perpendicular and parallel to the direction of lightwaves propagation. Moreover, their dispersion relation can slow down lightwaves which can be useful when they are combined with SOA or QDSOA.
+On the other hand, the PC is a dielectric material which consists of two different refractive indexes periodically. The lightwaves in specific bandwidth cannot propagate through the PC. PC waveguides(PCWs) use this characteristic which can be obtained PC slab with creating a line defect. They can confine the lightwaves perpendicular and parallel to the direction of lightwaves propagation. Moreover, their dispersion relation can slow down lightwaves which can be useful when they are combined with SOA or QDSOA. \par
 % AOLGsについての話(トランジスタの長さの根拠がほしい)
-AOLGs are essential for operating binary data. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates because all-optical devices require certain length to operate as a component of AOLGs. For instance, a length of QDSOA is about 2mm{\cite{qdsoa_nssm}}, whereas the one of transistors, used for commercially available electronic devices, is about 40nm. 
+AOLGs are the applications of all-optical devices which can operate binary inputs. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates because all-optical devices require certain length to operate as a component of AOLGs. For instance, a length of QDSOA is about 2mm{\cite{qdsoa_nssm}}, whereas the one of transistors, used for commercially available electronic devices, is about 14nm{\cite{current_cpu}}.
 % 研究の意義・これからやることの説明
 Few researches discuss about the length of device which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical AND gate. AND gate plays an important role for multiplexer and demultiplexer circuits whose applications are communication system, computer memory and arithmetic logic unit. To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
 
 \section{PC-QDSOA model}
 % PC-QDSOAの構成について
-The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}As}}$ and InAs as an active region to enhance optical power around ${\rm{1.3\mu m}}${\cite{theory_of_qdsoa}}. The population inversion in the active regions of amplifiers is achieved by passing current through laterally doped ${\rm{p^{+}-p-n^{+}}}$ structures. Also, the waveguide of the PC-QDSOA is W1 PCW wherein slow light can be achieved with either zero group velocity dispersion and zero third order dispersion. This waveguide can be archived by proper shifting and narrowing of the first two rows of air holes adjacent to the waveguide core. The schematic diagram of PC-QDSOA waveguide is illustrated in Fig.{\ref{fig:pcqdsoa}}.
+The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}As}}$ and InAs as an active region to enhance optical power around ${\rm{1.3\mu m}}${\cite{theory_of_qdsoa}}. The population inversion in the active regions of amplifiers is achieved by passing current through laterally doped ${\rm{p^{+}-p-n^{+}}}$ structures. Also, the waveguide of the PC-QDSOA is W1 PCW wherein slow light can be achieved with either zero group velocity dispersion and zero third order dispersion in specific bandwidth. This waveguide can be archived by proper shifting and narrowing of the first two rows of air holes adjacent to the waveguide core. The schematic diagram of PC-QDSOA waveguide is illustrated in Fig.{\ref{fig:pcqdsoa}}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -92,7 +92,7 @@ The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}A
 \end{figure}
 
 % PC-QDSOAがレート方程式で理論解析できることを説明
-The operation of the PC-QDSOAs can be theoretically studied by means of a rate equation model{\cite{pcqdsoa}}. InAs QDs consists of a ground state (GS), an excited state (ES), and an upper state (US). Thus, a rate equation of the PC-QDSOA is as follows:
+The operation of the PC-QDSOAs can be theoretically studied by means of a rate equation model{\cite{pcqdsoa}}. InAs QDs consists of a ground state (GS), an excited state (ES), and an upper state (US). An quantum well (QW) is common carrier reservoir where current injection  Moreover, because the size and shape of QDs. Thus, a rate equation of the PC-QDSOA is as follows:
 
 \begingroup\makeatletter\def\f@size{7}\check@mathfonts
 \begin{eqnarray}
@@ -220,6 +220,9 @@ I. Kang, C. Dorrer, L. Zhang, M. Dinu, M. Rasras, L. L. Buhl, S. Cabot, A. Bhard
 
 \bibitem{qdsoa_nssm} 
 K. Abedi, and H. Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " {\it J. Lightw. Technol.}, vol. 32, no.12, pp. 237--241, Jun. 2012.
+
+\bibitem{current_cpu}
+(2017, Dec. 8). {\it Intel Core i7-5557U specifications} [Online]. Available: http://www.cpu-world.com/CPUs/Core\_i7/Intel-Core\%20i7-5557U\%20Mobile\%20processor.html
 
 \bibitem{theory_of_qdsoa}
 M. Sugawara, H. Ebe, N. Hatori, M. Ishida, Y. Arakawa, T. Akiyama, K. Otsubo, and Y. Nakata, ``Theory of optical signal amplification and processing by quantum-dot semiconductor optical amplifiers, '' {\it PhysRevB}, vol. 69, Iss. 23, Jun. 2004.
