@@ -10,6 +10,7 @@
 \usepackage{ncsp16} %% !! Strongly recommended to use it
 \usepackage{color}
 \usepackage{ascmac}
+\usepackage{amsmath}
 \usepackage{graphicx}
 \graphicspath{{./Figure/}}
 
@@ -64,17 +65,17 @@ E-mail:  4416630@ed.tus.ac.jp
 
 \section*{Abstract}
 
-All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of the proposed gate, we compare the proposed gate with conventional one in terms of length reduction, energy consumption and performance.
+All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of the proposed gate, we compare the proposed gate with conventional one in terms of device size, energy consumption and performance.
 
 \section{Introduction}
 % 全般的な話
 High-speed and large capacity data transmission is required to cope with expanding network traffic data{\cite{qdsoa_ethernet}}. In current optical network, optical signal goes to destination through optical fiber with being affected by noise. Thus, re-amplification, re-timing and re-shaping operations are essential for reliable optical network. These days, electronic devices realize these operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion{\cite{3r_regeneration}}. In order to cope with these problems, all-optical signal processing is required and many researchers worked on and developed all-optical devices which realize this technology.
 % QDSOAについての話
-Especially, AOLGs are essential for operating binary data. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates because all-optical devices require certain length to operate as a component of AOLGs. For instance, a length of QDSOA, known as a component of AOLGs, is about 2mm{\cite{qdsoa_nssm}}, whereas the one of transistors, used for commercially available electronic devices, is about 40nm. 
+QDSOA is one of these devices which can be useful in many applications because of it's fast gain recovery time and nonlinear optics effect{\cite{qdsoa_aosp}}. QD's confinement of electrons and electron holes enables fast gain recovery and SOA's gain saturation enables nonlinear optics effect, respectively.
 % PCについての話
-On the other hand, the PC 
-% AOLGsについての話
-
+On the other hand, the PC is a dielectric material which consists of two different refractive indexes periodically. The lightwaves in specific bandwidth cannot propagate through the PC. PC waveguides(PCWs) use this characteristic which can be obtained PC slab with creating a line defect. They can confine the lightwaves perpendicular and parallel to the direction of lightwaves propagation. Moreover, their dispersion relation can slow down lightwaves which can be useful when they are combined with SOA or QDSOA.
+% AOLGsについての話(トランジスタの長さの根拠がほしい)
+AOLGs are essential for operating binary data. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates because all-optical devices require certain length to operate as a component of AOLGs. For instance, a length of QDSOA is about 2mm{\cite{qdsoa_nssm}}, whereas the one of transistors, used for commercially available electronic devices, is about 40nm. 
 % 研究の意義・これからやることの説明
 Few researches discuss about the length of device which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical AND gate. AND gate plays an important role for multiplexer and demultiplexer circuits whose applications are communication system, computer memory and arithmetic logic unit. To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
 
@@ -90,7 +91,71 @@ The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}A
 \end{center}
 \end{figure}
 
+% PC-QDSOAがレート方程式で理論解析できることを説明
+The operation of the PC-QDSOAs can be theoretically studied by means of a rate equation model{\cite{pcqdsoa}}. InAs QDs consists of a ground state (GS), an excited state (ES), and an upper state (US). Thus, a rate equation of the PC-QDSOA is as follows:
 
+\begingroup\makeatletter\def\f@size{7}\check@mathfonts
+\begin{eqnarray}
+  \label{eq:pc_qd_qw}
+  \frac{ {\partial}f^{c(v)}_{w} }{ {\partial}t } & = & 
+	\frac{\eta_{inj}I}{qN^{c(v)}_{W}} - 
+	\frac{ \sqrt{ f^{c}_{w} f^{v}_{w} } }{ \hat{\tau}^{c(v)}_{wr} } + 
+	\frac{ D^{c(v)}_{u} }{ D^{c(v)}_{w} } \sum_{j=1}^{2M+1} G^{c(v)}_{j} \nonumber\\ &&
+	\times
+	\left(
+		\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{uw,j} }	\left(1 - f^{c(v)}_{w} \right) -
+		\frac{ f^{c(v)}_{w}  }{ \hat{\tau}^{c(v)}_{wu}  } 	\left(1 - f^{c(v)}_{u,j}\right)
+	\right)
+  \\
+  \label{eq:pc_qd_us}
+  \frac{ {\partial}f^{c(v)}_{u,j} }{ {\partial}t } & = & 
+	\frac{ f^{c(v)}_{w}  }{ \hat{\tau}^{c(v)}_{wu}  }	\left(1 - f^{c(v)}_{u,j}\right) -
+	\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{uw,j} }	\left(1 - f^{c(v)}_{w} \right) + \frac{ D^{c(v)}_{e} }{ D^{c(v)}_{u} } \nonumber\\ &&
+	\times \left(
+		\frac{ f^{c(v)}_{e,j} }{ \hat{\tau}^{c(v)}_{eu} } \left(1 - f^{c(v)}_{u,j}\right) -
+		\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{ue} } \left(1 - f^{c(v)}_{e,j}\right)
+	\right)  \nonumber\\ &&
+	+ \frac{ D^{c(v)}_{g} }{ D^{c(v)}_{u} } \left(
+		\frac{ f^{c(v)}_{g,j} }{ \hat{\tau}^{c(v)}_{gu} } \left(1 - f^{c(v)}_{u,j}\right) -
+		\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{ug} } \left(1 - f^{c(v)}_{g,j}\right)
+	\right)  \nonumber\\ &&
+	- \frac{ \sqrt{ f^{c}_{u,j} f^{v}_{u,j} } }{ \hat{\tau}^{c(v)}_{ur} }
+  \\
+  \label{eq:pc_qd_es}
+  \frac{ {\partial}f^{c(v)}_{e,j} }{ {\partial}t } & = & 
+	\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{ue} }	\left(1 - f^{c(v)}_{e,j}\right) -
+	\frac{ f^{c(v)}_{e,j} }{ \hat{\tau}^{c(v)}_{eu} }	\left(1 - f^{c(v)}_{u,j}\right) \nonumber\\ &&
+	+ \frac{ D^{c(v)}_{g} }{ D^{c(v)}_{e} } \left(
+		\frac{ f^{c(v)}_{g,j} }{ \hat{\tau}^{c(v)}_{ge} } \left(1 - f^{c(v)}_{e,j}\right) -
+		\frac{ f^{c(v)}_{e,j} }{ \hat{\tau}^{c(v)}_{eg} } \left(1 - f^{c(v)}_{g,j}\right)
+	\right)  \nonumber\\ &&
+	- \frac{ 1 }{ N^{c(v)}_{E,j} } \sum_{k} \frac
+		{\Gamma_{k}P_{k,in}g^{e}_{j,k}\left[e^{\left(\left[g_{mod}(t,\lambda_{k}) - \alpha(\lambda_{k})\right]L_{ca}\right)} - 1\right]}
+		{\hbar \omega_{k}\left[g_{mod}(t,\lambda_{k}) - \alpha(\lambda_{k})\right]} \nonumber\\ &&
+	\times
+	\left( f^{c}_{e,j} + f^{v}_{e,j} - 1 \right)
+  \\
+  \label{eq:pc_qd_gs}
+  \frac{ {\partial}f^{c(v)}_{g,j} }{ {\partial}t } & = & 
+	\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{ug} }	\left(1 - f^{c(v)}_{g,j}\right) -
+	\frac{ f^{c(v)}_{g,j} }{ \hat{\tau}^{c(v)}_{gu} }	\left(1 - f^{c(v)}_{u,j}\right) \nonumber\\ &&
+	\frac{ f^{c(v)}_{e,j} }{ \hat{\tau}^{c(v)}_{eg} } \left(1 - f^{c(v)}_{g,j}\right) -
+	\frac{ f^{c(v)}_{g,j} }{ \hat{\tau}^{c(v)}_{ge} } \left(1 - f^{c(v)}_{e,j}\right) \nonumber\\ &&
+	- \frac{ \sqrt{ f^{c}_{g,j} f^{v}_{g,j} } }{ \hat{\tau}_{dr} } - \frac{1}{N^{c(v)}_{G,j}} \nonumber\\ &&
+	\times \left(\sum_{k} 
+	\frac
+		{\Gamma_{k}P_{k,in}g^{g}_{j,k}\left[e^{\left(\left[g_{mod}(t,\lambda_{k}) - \alpha(\lambda_{k})\right]L_{ca}\right)} - 1\right]}
+		{\hbar \omega_{k}\left[g_{mod}(t,\lambda_{k}) - \alpha(\lambda_{k})\right]} + \right. \nonumber\\ && 
+	\left.
+	\frac
+		{\Gamma_{p}P_{p}g^{e}_{j,p}\left[e^{\left(\left[g_{mod}(t,\lambda_{p}) - \alpha(\lambda_{p})\right]L_{ca}\right)} - 1\right]}
+		{\hbar \omega_{p}\left[g_{mod}(t,\lambda_{p}) - \alpha(\lambda_{p})\right]}
+	\right) \nonumber\\ &&
+	\times
+	\left( f^{c}_{g,j} + f^{v}_{g,j} - 1 \right)
+\end{eqnarray}
+\endgroup
+More details about the PC-QDSOA and physical parameters related to numerical analysis can be found in {\cite{pcqdsoa}}.
 
 \newpage
 
@@ -107,7 +172,6 @@ The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in 
 
 \section{Results}
 % 数値解析方法
-In order to numerically analyze the operation of the PC-QDSOA, we use a rate equation model and wave propagation equation{\cite{pcqdsoa}} with using nonlinear state space model(NSSM). More details about the PC-QDSOA and physical parameters related to numerical analysis can be found in {\cite{pcqdsoa}}.
 The parameters and results are shown in this section. In order to investigate the quality of AND operation, pump current power and the powers of input signals are varied. The fixed parameters are the wavelength of data signals, bit rate and a width of pulse. The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively. The bit rate is 160Gb/s. The pulses are Gaussian-shaped with a width of 1.2ps. 
 % 入出力結果
 Fig.{\ref{fig:output_signal}} shows the analysis results of the binary outcome when pump current is 4mA and the max power of signals A, B and clock are 10mW, 0.1mW and ${\rm{1 \mu W}}$, respectively. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig.{\ref{fig:eye_dia}} shows an eye diagram for the output result and the extinction ratio of the output signal is 6.03 dB.
@@ -139,7 +203,7 @@ On the other hand, because the gain recovery time varies due to the power of pum
 \end{center}
 \end{figure}
 
-% TODO::QD-SOAとの比較結果
+% TODO::QDSOAとの比較結果
 
 \section{Conclusion}
 We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram and extinction ratio. The results show the proposed gate can operate at 160Gb/s when current injection is over 3.8mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
@@ -150,6 +214,9 @@ D. Bimberg, M. Laemmlin, C. Meuer, G. Fiol, M. Kuntz, A. Schliwa, N. N. Ledentso
 
 \bibitem{3r_regeneration}
 B. Sartorius, ``3R regeneration for all-optical networks, " {\it ICTON}, pp. 333--337, Aug. 2002.
+
+\bibitem{qdsoa_aosp}
+I. Kang, C. Dorrer, L. Zhang, M. Dinu, M. Rasras, L. L. Buhl, S. Cabot, A. Bhardwaj, X. Liu, M. A. Cappuzzo, L. Gomez, A. Wong-Foy, Y. F. Chen, N. K. Dutta, S. S. Patel, D. T. Neilson, C.R. Giles, A. Piccirilli, and J. Jaques, ``Characterization of the dynamical processes in all-optical signal processing using semiconductor optical amplifiers, " {\it IEEE J. Sel. Topics Quantum Electron.}, vol. 14, no.3, pp. 758--769, May/Jun. 2008.
 
 \bibitem{qdsoa_nssm} 
 K. Abedi, and H. Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " {\it J. Lightw. Technol.}, vol. 32, no.12, pp. 237--241, Jun. 2012.
