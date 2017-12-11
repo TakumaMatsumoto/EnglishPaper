@@ -74,7 +74,7 @@ High-speed and large capacity data transmission is required to cope with expandi
 QDSOA is one of these devices which can be useful in many applications because of it's fast gain recovery time and nonlinear optics effect{\cite{qdsoa_aosp}}. QD's confinement of electrons and electron holes enables fast gain recovery and SOA's gain saturation enables nonlinear optics effect, respectively.
 % PCについての話
 On the other hand, the PC is a dielectric material which consists of two different refractive indexes periodically. The lightwaves in specific bandwidth cannot propagate through the PC. PC waveguides(PCWs) use this characteristic which can be obtained PC slab with creating a line defect. They can confine the lightwaves perpendicular and parallel to the direction of lightwaves propagation. Moreover, their dispersion relation can slow down lightwaves which can be useful when they are combined with SOA or QDSOA. \par
-% AOLGsについての話(トランジスタの長さの根拠がほしい)
+% AOLGsについての話
 AOLGs are the applications of all-optical devices which can operate binary inputs. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates because all-optical devices require certain length to operate as a component of AOLGs. For instance, a length of QDSOA is about 2mm{\cite{qdsoa_nssm}}, whereas the one of transistors, used for commercially available electronic devices, is about 14nm{\cite{current_cpu}}.
 % 研究の意義・これからやることの説明
 Few researches discuss about the length of device which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical AND gate. AND gate plays an important role for multiplexer and demultiplexer circuits whose applications are communication system, computer memory and arithmetic logic unit. To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
@@ -92,7 +92,7 @@ The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}A
 \end{figure}
 
 % PC-QDSOAがレート方程式で理論解析できることを説明
-The operation of the PC-QDSOAs can be theoretically studied by means of a rate equation model{\cite{pcqdsoa}}. InAs QDs consists of a ground state (GS), an excited state (ES), and an upper state (US). An quantum well (QW) is common carrier reservoir where current injection  Moreover, because the size and shape of QDs. Thus, a rate equation of the PC-QDSOA is as follows:
+The operation of the PC-QDSOAs can be theoretically studied by means of a rate equation model{\cite{pcqdsoa}}. InAs QDs consists of a ground state (GS), an excited state (ES), and an upper state (US). A quantum well (QW) is common carrier reservoir for QDs. Due to variability in the size and shape of QDs with use of Stranski-Krastanov mode, the carrier dynamics in the QDs can be described by 1088 variables. Thus, a rate equation of the PC-QDSOA is as follows:
 
 \begingroup\makeatletter\def\f@size{7}\check@mathfonts
 \begin{eqnarray}
