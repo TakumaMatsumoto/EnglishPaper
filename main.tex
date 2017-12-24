@@ -1,13 +1,20 @@
-% If you are LaTeX 2.09 user:
-% \documentstyle[twocolumn,ncsp16,ascmac,a4paper]{article}
-%
-\documentclass[twocolumn,a4paper]{article}
-\usepackage[colorlinks, urlcolor=blue,
-	pdffitwindow, bookmarksopen,
-	filecolor=blue,
-	bookmarksopenlevel=0,
-	pdfpagelayout=SinglePage, dvipdfm]{hyperref} 
-\usepackage{ncsp16} %% !! Strongly recommended to use it
+\documentclass[twocolumn]{el-author}
+
+%\usepackage[...]{...}      This has been commented out as we are not using any additional packages here.  On the whole, they should be unnecessary.
+\newcommand{\hH}{\hat{H}}
+\newcommand{\D}{^\dagger}
+\newcommand{\ua}{\uparrow}
+\newcommand{\nc}{\newcommand}
+\nc{\da}{\downarrow} \nc{\hc}{\hat{c}} \nc{\hS}{\hat{S}}
+\nc{\bra}{\langle} \nc{\ket}{\rangle} \nc{\eq}{equation (\ref}
+\nc{\h}{\hat} \nc{\hT}{\h{T}}\nc{\be}{\begin{eqnarray}}
+\nc{\ee}{\end{eqnarray}}\nc{\rd}{\textrm{d}}\nc{\e}{eqnarray}\nc{\hR}{\hat{R}}\nc{\Tr}{\mathrm{Tr}}
+\nc{\tS}{\tilde{S}}\nc{\tr}{\mathrm{tr}}\nc{\8}{\infty}\nc{\lgs}{\bra\ua,\phi|}\nc{\rgs}{|\ua,\phi\ket}
+\nc{\hU}{\hat{U}}\nc{\lfs}{\bra\phi|}\nc{\rfs}{|\phi\ket}\nc{\hZ}{\hat{Z}}\nc{\hd}{\hat{d}}\nc{\mD}{\mathcal{D}}
+\nc{\bd}{\bar{d}}\nc{\bc}{\bar{c}}\nc{\mc}{\mathcal}\nc{\ea}{eqnarray}\nc{\mG}{\mathcal{G}}\nc{\bce}{\begin{center}}
+\nc{\ece}{\end{center}}
+\date{25th December 2017}
+
 \usepackage{color}
 \usepackage{ascmac}
 \usepackage{amsmath}
@@ -16,56 +23,13 @@
 
 \begin{document}
 
-\title{All-optical AND gate with photonic crystal quantum-dot semiconductor optical amplifiers}
+\title{All-optical AND gate using photonic crystal quantum dot semiconductor optical amplifiers}
 
-\name{Takuma Matsumoto, Gou Hosoya, and Hiroyuki Yashima}
-%%% The order of name is first name and family name. 
-%%% First characters in each of them should be written by a capital letter, for example, Mikio Hasegawa, not Mikio HASEGAWA. 
-%%% If many authors are required to listed and more than one row is needed, use the following list.  
-% \name{
-% \begin{tabular}{c}
-% Iker Casillas, Sergio Ramos, Carles Puyol, Maicon, Philipp Lahm, Andres Iniesta, Xavi, \\Bastian Schweinsteiger, Wesley Sneijder, Diego Forlan, David Villa, and Vicente del Bosque
-% \end{tabular}
-% }
+\author{T. Matsumoto, G. Hosoya and H. Yashima}
 
-\address{
-\begin{tabular}{c}
-%%% !! Authors should fill all the lists of the following information. 
-Tokyo University of Science\\
-6-3-1, Shinjuku Katsushika-ku, Tokyo, 125-8585 Japan\\
-Phone/FAX:+81-3-5876-1717\\
-E-mail:  4416630@ed.tus.ac.jp
-\end{tabular}
-}
-
-%%%%
-%%%% If more than one affiliations are needed, use the following list. 
-%%%%
-
-% \name{Mikio Hasegawa$^1$, Mikio Hasegawa$^2$ and Mikio Hasegawa$^1$}
-
-% \address{
-% \begin{tabular}{c}
-% $^1$
-%Tokyo University of Science\\
-%6--3--1, niijyuku, Katsushika-ku, Tokyo, 125--8585 Japan\\
-%Phone/FAX:+81-999-99-9999\\
-%E-mail: tpc16@ncsp.jp
-% \end{tabular}
-% \begin{tabular}{c}
-% $^2$
-%Tokyo University of Science\\
-%6--3--1, niijyuku, Katsushika-ku, Tokyo, 125--8585 Japan\\
-%Phone/FAX:+81-999-99-9999\\
-%E-mail: tpc16@ncsp.jp
-% \end{tabular}
-% }
+\abstract{All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of the proposed gate, we compare the proposed gate with conventional one in terms of device size, energy consumption and performance.}
 
 \maketitle
-
-\section*{Abstract}
-
-All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of the proposed gate, we compare the proposed gate with conventional one in terms of device size, energy consumption and performance.
 
 \section{Introduction}
 % 全般的な話
@@ -173,11 +137,11 @@ The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in 
 % 数値解析方法
 The parameters and results are shown in this section. In order to investigate the quality of AND operation, current injection power and the powers of input signals are varied. The fixed parameters are the wavelength of data signals, bit rate and a width of pulse. The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively. The bit rate is 160Gb/s. The pulses are Gaussian-shaped with a width of 1.2ps. 
 % 入出力結果
-Fig.{\ref{fig:output_signal}} shows the results of the binary outcome when current injection is 4mA and the max power of signals A, B and clock are 10mW, 0.1mW and ${\rm{1 \mu W}}$, respectively. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig.{\ref{fig:eye_dia}} shows an eye diagram for the output result and the extinction ratio of the output signal is 6.03 dB.
+Fig.{\ref{fig:output_signal}} shows the results of the binary outcome when current injection is 4mA and the max power of signals A, B and clock are 10mW, ${\rm{1 \mu W}}$, and 0.1mW, respectively. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig.{\ref{fig:eye_dia}} shows an eye diagram for the output result and the extinction ratio of the output signal is 6.03 dB.
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=70mm]{and_gate.eps}
+  \includegraphics[width=80mm]{in-out.eps}
   \caption{Analysis results of PC-QDSOA assisted AND gate operation}
   \label{fig:output_signal}
 \end{center}
@@ -196,7 +160,7 @@ On the other hand, because the gain recovery time varies due to the power of cur
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=70mm]{and_gate.eps}
+  \includegraphics[width=80mm]{pcqdsoa_ERs.eps}
   \caption{Extinction ratio under different current injection}
   \label{fig:different_pump_current}
 \end{center}
@@ -207,6 +171,13 @@ On the other hand, because the gain recovery time varies due to the power of cur
 
 \section{Conclusion}
 We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram and extinction ratio. The results show the proposed gate can operate as AND gate at 160Gb/s when current injection is over 3.8mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
+
+\vskip3pt
+
+\noindent T. Matsumoto, G. Hosoya and H. Yashima (\textit{Tokyo University of Science, 6-3-1, Shinjuku Katsushika-ku, Tokyo, 125-8585, Japan})
+\vskip3pt
+
+\noindent E-mail: 4416630@ed.tus.ac.jp
 
 \begin{thebibliography}{9}
 \bibitem{qdsoa_ethernet}
