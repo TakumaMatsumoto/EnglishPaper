@@ -135,47 +135,49 @@ The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in 
 
 \section{Results}
 % 数値解析方法
-We numerically analyze the operation of the proposed gate with using MATLAB 2016b and Optisystem 14.0.0. The physical parameters used for solving rate equation can be found in {\cite{pcqdsoa}}. Table.{\ref{tb:param}} shows the fixed parameters used for following numerical analysis. The pulses are Gaussian-shaped whose full width at half maximum is 1.2ps. The current injection and bit rate are varied respective analysis results. \par
+We numerically analyze the operation of the proposed gate with using MATLAB 2016b and Optisystem 14.0.0. The physical parameters used for solving rate equation can be found in {\cite{pcqdsoa}}. Table.{\ref{tb:param}} shows the fixed parameters used for following numerical analysis. The pulses are Gaussian-shaped pulses. \par
 \begin{table}[htbp]
   \begin{center}
   \caption{The fixed parameters used for following numerical analysis}
-  \begin{tabular}{|c|c|c|c|} \hline
-    Symbol & Meaning & Value & Unit \\ \hline
-    $P_A$ & Maximum power of Input A & 10 & mW \\ \hline
-    $P_B$ & Maximum power of Input B & 1 & $\mu W$ \\ \hline
-    $P_C$ & Maximum power of Clock & 100 & $\mu W$ \\ \hline
-    $\lambda_A$ & Wavelength of Input A & 1307 & nm \\ \hline
-    $\lambda_B$ & Wavelength of Input B & 1307 & nm \\ \hline
-    $\lambda_C$ & Wavelength of Clock & 1310 & nm \\ \hline
+  \begin{tabular}{|c|c|c|} \hline
+    Parameter & Value & Unit \\ \hline
+    Maximum power of Input A & 10 & mW \\ \hline
+    Maximum power of Input B & 1 & $\mu W$ \\ \hline
+    Maximum power of Clock & 100 & $\mu W$ \\ \hline
+    Wavelength of Input A & 1307 & nm \\ \hline
+    Wavelength of Input B & 1307 & nm \\ \hline
+    Wavelength of Clock & 1310 & nm \\ \hline
+    Full width at half maximum of pulse & 1.2 & ps \\ \hline
+    Transmission speed & 160 & Gb/s \\ \hline
   \end{tabular}
   \label{tb:param}
   \end{center}
 \end{table}
 % ER,Qについての説明
-To evaluate the proposed gate, we use eye diagram, extinction ratio and Q-factor as appropriate metrics. The extinction ratio can be represented as $ER[dB] = 10\log_{10} \left(P^{1}_{min} / P^{0}_{max} \right)$. $P^{1}_{min}$ represents minimum power of signal ``1'' and $P^{0}_{max}$ represents maximum power of signal ``0''. The Q-factor can be represented as $Q = $.  \par
+To evaluate the proposed gate, we use eye diagram, extinction ratio(ER) and Q-factor as appropriate metrics. The extinction ratio can be represented as $ER[dB] = 10\log_{10} \left(P^{1}_{min} / P^{0}_{max} \right)$. $P^{1}_{min}$ represents minimum power of signal ``1'' and $P^{0}_{max}$ represents maximum power of signal ``0''. The Q-factor can be represented as $Q = (S_{1}-S_{0})/(\sigma_{1}+\sigma_{0})${\cite{q_factor}} where $S_{1},S_{0}$ are the average power of signal ``1'' and ``0'' and $\sigma_{1},\sigma_{0}$ are the standard deviations of those signals.  \par
 % 入出力結果
-Fig.{\ref{fig:output_signal}} shows the analysis results of the input-output characteristics when current injection is 6mA and the bit rate is 160Gb/s. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig.{\ref{fig:eye_dia}} shows an eye diagram for the output result and the extinction ratio of the output signal is 6.03 dB.
+Fig.{\ref{fig:output_signal}} shows the analysis results of the input-output characteristics when current injection is 6mA. Fig.{\ref{fig:eye_dia}} shows an eye diagram of the output signal. The ER and Q-factor of the output signal are 8.58 dB and 7.41, respectively. From these results, it is said that the proposed gate can operate as an AND gate at 160 Gb/s{\cite{extinction_ratio}}.
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{in-out.eps}
-  \caption{Analysis results of PC-QDSOA assisted AND gate operation when current injection is 6mA}
+  \includegraphics[width=75mm]{in-out.eps}
+  \caption{Input-output characteristics of PC-QDSOA assisted AND gate operation when current injection is 6mA}
   \label{fig:output_signal}
 \end{center}
 \end{figure}
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=75mm]{eyedia_4mA.eps}
-  \caption{Eye diagram of output signal when current injection is 6mA}
+  \includegraphics[width=75mm]{eyedia_6mA.eps}
+  \caption{Eye diagram of the output signal when current injection is 6mA}
   \label{fig:eye_dia}
 \end{center}
 \end{figure}
 % 注入電流を変えたときの結果
-On the other hand, because the gain recovery time varies due to the power of current injection, it is necessary to investigate on the effect on power of current injection to the proposed AND gate. Fig.{\ref{fig:pcqdsoa_different_pump_current_ERs}} shows the extinction ratios under different current injection. This result shows the extinction ratio is improving with increasing current injection because pattern-effect is decreasing.
+On the other hand, because the gain recovery time varies due to the power of current injection, we have investigated on the effect on power of current injection to the proposed AND gate. Fig.{\ref{fig:pcqdsoa_different_pump_current_ERs}} and Fig.{\ref{fig:pcqdsoa_different_pump_current_Qs}} show the ERs and Q-factors of the output signals under different current injection, respectively. The ER and Q-factor are improving with increasing current injection because pattern-effect is decreasing. When current injection is over 9mA, there is few change in ERs because the maximum gain recovery time is limited by carrier relaxation time and capture time. 
 
 \begin{figure}[htbp]
 \begin{center}
   \includegraphics[width=80mm]{pcqdsoa_ERs.eps}
-  \caption{Extinction ratio under different current injection}
+  \caption{ERs under different current injection}
   \label{fig:pcqdsoa_different_pump_current_ERs}
 \end{center}
 \end{figure}
@@ -187,13 +189,29 @@ On the other hand, because the gain recovery time varies due to the power of cur
   \label{fig:pcqdsoa_different_pump_current_Qs}
 \end{center}
 \end{figure}
+\newpage
 
 % TODO::QDSOAとの比較結果
+In order to show the effectiveness of the proposed gate, we have compared the proposed AND gate with the one QDSOA assisted, whose schematic diagram is same as the proposed one. The physical parameters and numerical analysis method of QDSOA can be found in {\cite{qdsoa_nssm}}. Fig.{\ref{fig:comp_ERs}} and fig.{\ref{fig:comp_Qs}} show the comparison of current injection required to obtain each ERs and Q-factors for QDSOA assisted AND gate and the proposed one, respectively. From fig.{\ref{fig:comp_ERs}}, it is said that to obtain ER about 7.5dB, QDSOA assisted AND gate requires 3000mA, whereas the proposed AND gate requires only 5mA. Likewise, from fig.{\ref{fig:comp_Qs}}, to obtain Q-factor about 5, QDSOA assisted AND gate requires 2800mA, whereas the proposed AND gate requires only 4mA. Moreover, the device length of the QDSOA is 2mm, whereas the one of the PC-QDSOA is 125${\rm{\mu m}}$. From these results, less energy consumption and less volume AND gate can be obtained with use of the proposed gate.
 
-% TODO::ビットレートを変えたときの結果
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=80mm]{qdsoa_vs_pcqdsoa_ERs.eps}
+  \caption{ERs under different current injection}
+  \label{fig:comp_ERs}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=80mm]{qdsoa_vs_pcqdsoa_Qs.eps}
+  \caption{Q-factor under different current injection}
+  \label{fig:comp_Qs}
+\end{center}
+\end{figure}
 
 \section{Conclusion}
-We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram, extinction ratio and Q-factor. The results show the proposed gate can operate as AND gate at 160Gb/s when current injection is over 3.8mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
+We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram, ER and Q-factor. The results show the proposed gate can operate as AND gate at 160Gb/s when current injection is over 6mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
 
 \vskip3pt
 
@@ -226,6 +244,12 @@ O. Khayam and H. Benisty, ``General recipe for flatbands in photonic crystal wav
 
 \bibitem{pcqdsoa} 
 H. Taleb and K. Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " {\it IEEE J. Quantum Electron.}, vol. 50, no. 8, pp. 605--612, Aug. 2014.
+
+\bibitem{q_factor} 
+P. Agrawal, ``Fiber-Optic Communication Systems, third ed., " {\it Wiley, John \& Sons.}, May. 2002.
+
+\bibitem{extinction_ratio} 
+D. Gayen, A. Bhattachryya, T. Chattopadhyay and J. Roy, ``Ultrafast All-Optical Half Adder Using Quantum-Dot Semiconductor Optical Amplifier-Based Mach-Zehnder Interferometer, " {\it J. Lightw. Technol.}, vol. 30, Iss. 21, pp. 3387--3393, Sep. 2012.
 
 \end{thebibliography}
 
