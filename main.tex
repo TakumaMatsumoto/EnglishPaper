@@ -131,7 +131,8 @@ Fig. {\ref{fig:and_gate}} schematizes the PC-QDSOA all-optical AND gate. Followi
 \section{Results}
 The operation of the proposed gate design is numerically analyzed using MATLAB 2016b and Optisystem 14.0.0. The physical parameters used for solving the rate equation are provided in reference {\cite{pcqdsoa}}. Table. {\ref{tb:param}} lists the fixed parameters used for the numerical analysis in this paper. The pulses were Gaussian shaped. \par
 \begin{table}[htbp]
-  \begin{center}
+\begin{center}
+  \centering
   \caption{Fixed parameters used in numerical analysis}
   \begin{tabular}{|c|c|c|} \hline
     Parameter & Value & Unit \\ \hline
@@ -145,7 +146,7 @@ The operation of the proposed gate design is numerically analyzed using MATLAB 2
     Transmission speed & 160 & Gb/s \\ \hline
   \end{tabular}
   \label{tb:param}
-  \end{center}
+\end{center}
 \end{table}
 To evaluate the proposed gate, the eye diagram, ER, and Q-factor are used as metrics. The ER can be represented as $ER[dB] = 10\log_{10} \left(P^{1}_{min} / P^{0}_{max} \right)$. $P^{1}_{min}$ represents minimum power of the binary signal ``1'' and $P^{0}_{max}$ represents the maximum power of the ``0'' signal. The Q-factor can be represented as $Q = (S_{1}-S_{0})/(\sigma_{1}+\sigma_{0}) ${\cite{q_factor}} where $S_{1}$, and $S_{0}$ are the average powers of signals ``1'' and ``0'' and $\sigma_{1}$, and $\sigma_{0}$ are the standard deviations of those signals. Herein, the large numbers of these metrics represent the proposed gate is more appropriate for an all-optical AND gate.\par
 Fig.{\ref{fig:output_signal}} shows the simulation results for the input-output characteristics with 6-mA current injection. Fig. {\ref{fig:eye_dia}} shows an eye diagram of the output signal. The ER and Q-factor for the output signal are 8.58 dB and 7.41, respectively. These results show that the proposed gate design can operate as an AND gate at 160 Gb/s {\cite{extinction_ratio}}.
