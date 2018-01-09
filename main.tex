@@ -151,50 +151,31 @@ To evaluate the proposed gate, the eye diagram, ER, and Q-factor are used as met
 Fig.{\ref{fig:output_signal}} shows the simulation results for the input-output characteristics with 6-mA current injection. Fig. {\ref{fig:eye_dia}} shows an eye diagram of the output signal. The ER and Q-factor for the output signal are 8.58 dB and 7.41, respectively. These results show that the proposed gate design can operate as an AND gate at 160 Gb/s {\cite{extinction_ratio}}.
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=75mm]{in-out.eps}
+  \includegraphics[width=80mm]{in-out.eps}
   \caption{Input-output characteristics for PC-QDSOA all-optical AND gate when current injection is 6 mA}
   \label{fig:output_signal}
-\end{center}
-\end{figure}
-\begin{figure}[htbp]
-\begin{center}
   \includegraphics[width=75mm]{eyedia_6mA.eps}
   \caption{Eye diagram of the output signal with 6-mA current injection}
   \label{fig:eye_dia}
+  \includegraphics[width=80mm]{pcqdsoa_ERs.eps}
+  \caption{ERs with varying current injection}
+  \label{fig:pcqdsoa_different_pump_current_ERs}
+  \includegraphics[width=80mm]{pcqdsoa_Qs.eps}
+  \caption{Q-factors with varying current injection}
+  \label{fig:pcqdsoa_different_pump_current_Qs}
 \end{center}
 \end{figure}
 Since the gain recovery time varies with the level of current injection, we also investigated the effect of varying current injection on the power output from the proposed AND gate. Figs. {\ref{fig:pcqdsoa_different_pump_current_ERs}} and {\ref{fig:pcqdsoa_different_pump_current_Qs}}, respectively, show the ERs and Q-factors of the output signals with different injected currents. The ERs and Q-factors improve with increasing current injection because pattern effects decrease. When current injection exceeds 9 mA, the ERs change slightly because the maximum gain-recovery time is limited by carrier-relaxation and capture times. 
 
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=80mm]{pcqdsoa_ERs.eps}
-  \caption{ERs with varying current injection}
-  \label{fig:pcqdsoa_different_pump_current_ERs}
-\end{center}
-\end{figure}
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=80mm]{pcqdsoa_Qs.eps}
-  \caption{Q-factor under different current injection}
-  \label{fig:pcqdsoa_different_pump_current_Qs}
-\end{center}
-\end{figure}
-\newpage
 To quantify the effectiveness of the proposed gate, the proposed AND gate is compared with QDSOA-assisted gate without PC components. This design follows the same schematic diagram as the proposed design. Physical parameters and the methods used to analyze this QDSOA design are provided in reference {\cite{qdsoa_nssm}}. Figs. {\ref{fig:comp_ERs}} and {\ref{fig:comp_Qs}}, respectively, plot ERs and Q-factors vs. current injection for QDSOA-assisted AND gate and the proposed design. To obtain ER of approximately 7.5 dB, the QDSOA-assisted AND gate requires 3000 mA, whereas the proposed design requires only 5-mA injected current. Likewise, Fig. {\ref{fig:comp_Qs}} shows that to obtain a Q-factor of approximately 5, the QDSOA-assisted AND gate requires 2800-mA injected current, whereas the proposed design requires only 4 mA. Moreover, the QDSOA is 2-mm long, whereas the proposed PC-QDSOA is 125-${\rm{\mu m}}$ long. This comparison demonstrates that the AND gate reduces energy consumption and device volume compared with all-optical AND gates reported in the literature.
 
 \begin{figure}[htbp]
 \begin{center}
   \includegraphics[width=80mm]{qdsoa_vs_pcqdsoa_ERs.eps}
-  \caption{ERs under different current injection}
+  \caption{ERs of QDSOA and PC-QDSOA all-optical AND gate with varying current injection}
   \label{fig:comp_ERs}
-\end{center}
-\end{figure}
-
-\begin{figure}[htbp]
-\begin{center}
   \includegraphics[width=80mm]{qdsoa_vs_pcqdsoa_Qs.eps}
-  \caption{Q-factor under different current injection}
+  \caption{Q-factors of QDSOA and PC-QDSOA all-optical AND gate with varying current injection}
   \label{fig:comp_Qs}
 \end{center}
 \end{figure}
